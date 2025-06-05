@@ -1,1 +1,1 @@
-צילום מסך אנליטיקס.png!
+![צילום מסך אנליטיקס](analytics-screenshot.png)
