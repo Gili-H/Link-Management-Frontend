@@ -1,0 +1,230 @@
+body {
+    font-family: 'Heebo', sans-serif; /* פונט נפוץ יותר בעיצוב עברי */
+    margin: 0; /* איפוס שוליים לכל הגוף */
+    background-color: #f0f2f5; /* צבע רקע רך יותר */
+    color: #333;
+    text-align: right;
+    line-height: 1.6; /* רווח שורות משופר לקריאות טובה יותר */
+}
+
+h1 {
+    color: #0a6ebd; /* כחול כהה יותר, מודרני */
+    text-align: center;
+    padding: 30px 20px; /* ריפוד גדול יותר לכותרת */
+    margin: 0; /* הסרת שוליים עליונים ותחתונים */
+    background-color: #ffffff; /* רקע לבן לכותרת */
+    box-shadow: 0 2px 4px rgba(0,0,0,0.05); /* צל עדין */
+    font-size: 2.2em; /* גודל כותרת גדול יותר */
+    font-weight: 700; /* עובי גופן מודגש */
+}
+
+h2 {
+    color: #1a73e8; /* כחול בהיר וחי יותר */
+    text-align: center;
+    margin-bottom: 25px; /* הגדלת רווח תחתון */
+    font-size: 1.6em; /* גודל כותרת משנה גדול יותר */
+    font-weight: 400; /* עובי גופן רגיל */
+    padding-bottom: 10px; /* ריפוד תחתון לכותרות משנה */
+    border-bottom: 1px solid #eee; /* קו הפרדה עדין */
+}
+
+.controls {
+    background-color: #ffffff; /* רקע לבן */
+    padding: 25px; /* הגדלת הריפוד */
+    border-radius: 12px; /* פינות מעוגלות יותר */
+    box-shadow: 0 4px 12px rgba(0,0,0,0.08); /* צל עמוק וברור יותר */
+    margin: 30px auto; /* ריכוז מרכזי ורווח מהחלק העליון/תחתון */
+    max-width: 800px; /* הגבלת רוחב כדי שלא יהיה רחב מדי */
+    display: flex; /* שימוש ב-flexbox */
+    flex-wrap: wrap; /* מאפשר גלישה לשורה הבאה */
+    justify-content: center; /* מרכוז פריטים */
+    align-items: center; /* מרכוז פריטים אנכית */
+    gap: 20px; /* רווח גדול יותר בין פריטים */
+    text-align: center; /* מרכוז טקסט בתוך הדיב */
+}
+
+.controls label {
+    font-weight: 600; /* גופן מודגש לתוויות */
+    color: #555;
+    flex-basis: 100%; /* תוויות תמיד בשורה חדשה */
+    text-align: center; /* מרכוז טקסט של תוויות */
+    margin-bottom: 5px; /* רווח קטן מתחת לתווית */
+}
+
+.controls input[type="text"] {
+    width: 250px; /* רוחב קבוע למראה אחיד */
+    padding: 12px 15px; /* ריפוד גדול יותר לשדות קלט */
+    border-radius: 6px; /* פינות מעוגלות יותר */
+    border: 1px solid #cce0ff; /* גבול בצבע כחול בהיר */
+    font-size: 1em;
+    color: #444;
+    transition: border-color 0.3s ease, box-shadow 0.3s ease; /* אנימציה למעבר צבע וצל */
+}
+
+.controls input[type="text"]:focus {
+    border-color: #1a73e8; /* גבול כחול בהיר יותר בפוקוס */
+    box-shadow: 0 0 8px rgba(26, 115, 232, 0.2); /* צל קל בפוקוס */
+    outline: none; /* הסרת מתאר ברירת מחדל */
+}
+
+.controls button {
+    background-color: #1a73e8; /* כחול חי */
+    color: white;
+    cursor: pointer;
+    border: none;
+    padding: 12px 25px; /* ריפוד גדול יותר לכפתורים */
+    border-radius: 6px; /* פינות מעוגלות */
+    font-size: 1.05em; /* גודל גופן מעט גדול יותר */
+    font-weight: 500;
+    transition: background-color 0.3s ease, transform 0.2s ease; /* אנימציה בעת ריחוף */
+    box-shadow: 0 2px 4px rgba(0,0,0,0.1); /* צל קל לכפתור */
+}
+
+.controls button:hover {
+    background-color: #0f62d1; /* גוון כחול כהה יותר בריחוף */
+    transform: translateY(-2px); /* אפקט קפיצה קל */
+}
+
+/* Global chart container styling */
+.chart-container {
+    background-color: #ffffff;
+    padding: 30px; /* הגדלת הריפוד */
+    border-radius: 12px; /* פינות מעוגלות יותר */
+    box-shadow: 0 4px 12px rgba(0,0,0,0.08); /* צל עמוק וברור יותר */
+    margin: 0; /* הועבר לשליטת ה-charts-grid */
+    /* max-width: 900px; הועבר לשליטת ה-charts-grid */
+    text-align: center; /* מרכוז תוכן */
+    display: flex; /* למיקום פריטים */
+    flex-direction: column; /* פריטים אחד מתחת לשני */
+    align-items: center; /* מרכוז אופקי של פריטים */
+}
+
+/* Flexbox wrapper for multiple charts (if you want them side by side on larger screens) */
+.charts-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(350px, 1fr)); /* 2-3 עמודות רספונסיביות */
+    gap: 30px; /* רווח בין תרשימים */
+    padding: 30px 20px; /* ריפוד סביב הגריד */
+    max-width: 1200px; /* הגבלת רוחב מקסימלי לגריד */
+    margin: 0 auto; /* מרכוז הגריד */
+}
+
+/* קבוצת פקדים ספציפית בתוך ה-chart-container (ה-input-group) */
+.chart-container .input-group {
+    display: flex;
+    flex-direction: column; /* פריטים אחד מתחת לשני */
+    align-items: center; /* מרכוז אופקי */
+    gap: 10px; /* רווח קטן בין פריטים */
+    width: 100%;
+    max-width: 350px; /* הגבלת רוחב ספציפית לקבוצת הקלט בתרשים */
+    margin-bottom: 20px; /* רווח מתחת לקבוצת הקלט, כדי להפריד מהקנבס */
+}
+
+.chart-container .input-group label {
+    margin-bottom: 0; /* הסרת שוליים תחתונים נוספים */
+    text-align: center; /* וודא מרכוז */
+    font-weight: 600; /* מודגש כמו תוויות אחרות */
+    color: #555;
+}
+
+.chart-container .input-group input[type="text"] {
+    width: calc(100% - 30px); /* רוחב מלא פחות ריפוד כדי למנוע גלישה */
+    max-width: 300px; /* רוחב מקסימלי לשדה */
+    padding: 12px 15px;
+    border-radius: 6px;
+    border: 1px solid #cce0ff;
+    font-size: 1em;
+    text-align: center; /* מרכוז הטקסט בתוך השדה */
+    color: #444;
+    transition: border-color 0.3s ease, box-shadow 0.3s ease;
+}
+
+.chart-container .input-group input[type="text"]:focus {
+    border-color: #1a73e8;
+    box-shadow: 0 0 8px rgba(26, 115, 232, 0.2);
+    outline: none;
+}
+
+.chart-container .input-group button {
+    width: calc(100% - 30px); /* רוחב מלא פחות ריפוד */
+    max-width: 300px; /* רוחב מקסימלי לכפתור */
+    padding: 12px 25px;
+    border-radius: 6px;
+    font-size: 1.05em;
+    background-color: #1a73e8;
+    color: white;
+    cursor: pointer;
+    border: none;
+    transition: background-color 0.3s ease, transform 0.2s ease;
+    box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+}
+
+.chart-container .input-group button:hover {
+    background-color: #0f62d1;
+    transform: translateY(-2px);
+}
+
+/* Base canvas styling */
+canvas {
+    max-width: 100%; /* Ensure canvas doesn't overflow its container */
+    height: auto; /* Ensure canvas doesn't overflow its container */
+    display: block; /* Remove extra space below inline elements */
+    margin-top: 20px; /* רווח מהכותרת/פקדים */
+}
+
+/* גמישות לתרשים העליון (פאי) */
+#linkClicksByTargetChart {
+    max-width: 450px; /* גודל מקסימלי לתרשים הפאי */
+    max-height: 450px;
+    margin: 0 auto; /* מרכוז עצמי בתוך הקונטיינר */
+    margin-top: 20px; /* רווח מהפקדים מעליו */
+}
+
+
+/* Media Queries לרספונסיביות טובה יותר */
+@media (max-width: 768px) {
+    h1 {
+        font-size: 1.8em;
+        padding: 20px;
+    }
+    h2 {
+        font-size: 1.4em;
+        margin-bottom: 20px;
+    }
+    .controls, .chart-container {
+        margin: 20px auto;
+        padding: 20px;
+        border-radius: 8px; /* פינות פחות מעוגלות במובייל */
+        box-shadow: 0 2px 8px rgba(0,0,0,0.08); /* צל פחות דומיננטי */
+    }
+    .controls input[type="text"],
+    .controls button {
+        width: 100%; /* רוחב מלא במובייל */
+        box-sizing: border-box; /* כולל ריפוד וגבול ברוחב */
+    }
+    .chart-container .input-group input[type="text"],
+    .chart-container .input-group button {
+        width: 100%; /* רוחב מלא במובייל עבור קבוצת הקלט בתרשים */
+        max-width: none; /* הסרת הגבלת רוחב מקסימלי במובייל */
+        box-sizing: border-box;
+    }
+    .charts-grid {
+        grid-template-columns: 1fr; /* עמודה אחת במובייל */
+        padding: 0 15px 20px;
+    }
+    .chart-container {
+        margin: 0; /* שהגריד ישלוט על הרווחים */
+    }
+}
+
+@media (max-width: 480px) {
+    h1 {
+        font-size: 1.6em;
+    }
+    h2 {
+        font-size: 1.2em;
+    }
+    .controls, .chart-container {
+        padding: 15px;
+    }
+}
