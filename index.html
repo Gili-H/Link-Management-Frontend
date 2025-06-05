@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="he" dir="rtl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>TinyUrl Analytics</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Heebo:wght@300;400;700&display=swap" rel="stylesheet">
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/chartjs-adapter-date-fns@3.0.0/dist/chartjs-adapter-date-fns.umd.min.js"></script>
+</head>
+<body>
+    <h1>נתוני אנליטיקס לקיצורי TinyUrl</h1>
+
+    <div class="controls">
+        <label for="userIdInput">מזהה משתמש (UserID):</label>
+        <input type="text" id="userIdInput" placeholder="הכנס UserID">
+        <button id="loadUserData">טען נתוני משתמש</button>
+    </div>
+
+    <div class="charts-grid">
+        <div class="chart-container">
+            <h2>פילוח קליקים לקישור ספציפי לפי מקור (טרגוט)</h2>
+            <div class="input-group">
+                <label for="linkIdInput">מזהה קישור (LinkID):</label>
+                <input type="text" id="linkIdInput" placeholder="הכנס LinkID">
+                <button id="loadLinkData">טען נתוני קישור</button>
+            </div>
+            <canvas id="linkClicksByTargetChart"></canvas>
+        </div>
+
+        <div class="chart-container">
+            <h2>כמות קליקים כוללת לכל קישורי המשתמש</h2>
+            <canvas id="userTotalClicksChart"></canvas>
+        </div>
+
+        <div class="chart-container">
+            <h2>פילוח קליקים יומי לכל קישורי המשתמש</h2>
+            <canvas id="userClicksByDayChart"></canvas>
+        </div>
+    </div>
+
+    <script src="scripts/charts.js"></script>
+</body>
+</html>
